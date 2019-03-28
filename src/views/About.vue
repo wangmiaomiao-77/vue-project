@@ -11,8 +11,34 @@
     <h1>This is an about page</h1>
     pathMatch:---{{$route.params.pathMatch}}
    <!-- {{$route.params.id}} -->
+
+   <AboutChild :message='message' :messageC='messageC' @parentGetData='getData' @parentGetCData='getCData'></AboutChild>
   </div>
 </template>
+<script>
+import AboutChild from './AboutChild';
+export default {
+  name:'about',
+  data(){
+    return {
+      message:'hello',
+      messageC:'hello c'
+    }
+  },
+  components:{
+    AboutChild
+  },
+  methods:{
+    getData(val){
+      console.log('这是来自B组件的数据'+val);
+    },
+    getCData(val){
+      console.log('这是来自C组件的数据'+val);
+    }
+  }
+}
+</script>
+
 <style>
   .swipe-container{
     height: 200px;

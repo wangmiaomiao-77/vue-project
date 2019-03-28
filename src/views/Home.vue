@@ -2,7 +2,7 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <div class="bor"></div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to Your Vue.js App" :action-msg='title'/>
   </div>
 </template>
 
@@ -13,7 +13,9 @@ import HelloWorld from '@/components/HelloWorld.vue'
 export default {
   name: 'home',
   data(){
-    
+    return {
+      title:'titles'
+    }
   },
   components: {
     HelloWorld

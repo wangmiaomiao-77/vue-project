@@ -1,15 +1,21 @@
 <template>
   <div class="hello">
+    {{names}}
     <h1>{{ msg }}</h1>
-    
+    <h3>{{actionMsg}}</h3>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  inject:['names'],
   props: {
-    msg: String
+    msg: String,
+    actionMsg:String
+  },
+  mounted(){
+    //console.log(this.names)
   }
 }
 </script>

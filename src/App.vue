@@ -27,6 +27,9 @@
 import router from './router';
 export default {
   name:'app',
+  provide:{//provide,inject 解决跨级组件间的通讯，provide向下传递数据，旗下所有的子组件使用inject注入均可获取数据。
+      names:'鹿晗'
+  },
   methods:{
     back:function(){
       router.go(-1);
